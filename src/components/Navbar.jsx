@@ -36,9 +36,19 @@ const Navbar = () => {
 
             <div className='flex items-center gap-4'>
                 {token ? (
-                    <div>
-                        <img src={profilePic} alt="Profile Pic" />
-                        <img src={dropdownIcon} alt="Dropdown Icon" style={{ cursor: 'pointer' }} onClick={() => setShowMenu(!showMenu)} /> {/* Show dropdown icon with toggle functionality */}
+                    <div className='flex items-center gap-2 cursor-pointer group relative'>
+                        <img className='w-8 rounded-full' src={profilePic} alt="Profile Pic" />
+                        <img className='w-2.5' src={dropdownIcon} alt="Dropdown Icon" style={{ cursor: 'pointer' }} onClick={() => setShowMenu(!showMenu)} />
+
+                        {showMenu && (
+                            <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20'>
+                                <div className='min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4'>
+                                    <p>My Profile</p>
+                                    <p>My Appointments</p>
+                                    <p>Logout</p>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ) : (
                     <button onClick={() => navigate('/login')} className='bg-blue-500 text-white px-4 py-2 rounded-full font-light hidden md:block'>
