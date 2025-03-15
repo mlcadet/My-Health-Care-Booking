@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../assets/assets_frontend/logo3.png';
+import profilePic from '../assets/assets_frontend/profile_pic.png';
+import dropdownIcon from '../assets/assets_frontend/dropdown_icon.svg';
 
 const Navbar = () => {
     const navigate = useNavigate();
+    const [showMenu, setShowMenu] = useState(false);
+    const [token, setToken] = useState(true);
 
     return (
         <div className='flex justify-between items-center text-ms py-4 mb-5 border-b-gray-400 border-b-2'>
@@ -31,9 +35,16 @@ const Navbar = () => {
             </ul>
 
             <div className='flex items-center gap-4'>
-                <button onClick={() => navigate('/login')} className='bg-blue-500 text-white px-4 py-2 rounded-full font-light'>
-                    Create Account
-                </button>
+                {token ? (
+                    <div>
+                        <img src={profilePic} alt="Profile Pic" />
+                        <img src={dropdownIcon} alt="Dropdown Icon" style={{ cursor: 'pointer' }} onClick={() => setShowMenu(!showMenu)} /> {/* Show dropdown icon with toggle functionality */}
+                    </div>
+                ) : (
+                    <button onClick={() => navigate('/login')} className='bg-blue-500 text-white px-4 py-2 rounded-full font-light hidden md:block'>
+                        Create Account
+                    </button>
+                )}
             </div>
         </div>
     );
