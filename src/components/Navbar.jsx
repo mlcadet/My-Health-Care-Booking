@@ -1,38 +1,46 @@
 import React from 'react';
-import logo from '../assets/logo.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import logo from '../assets/assets_frontend/logo3.png';
 
 const Navbar = () => {
-  return (
-    <div>
-      <img src={logo} alt="Logo" />
-      <ul>
-        <NavLink to="/">
-          <li> HOME </li>
-          <hr />
-        </NavLink>
+    const navigate = useNavigate();
 
-        <NavLink to="/doctors">
-          <li> ALL DOCTORS </li>
-          <hr />
-        </NavLink>
+    return (
+        <div className='flex justify-between items-center text-ms py-4 mb-5 border-b-gray-400 border-b-2'>
+            <img className='w-54 cursor-pointer' src={logo} alt="Logo" />
+            <ul className='hidden md:flex items-start gap-5 font-medium'>
+                <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
+                    <li className='py-1'> HOME </li>
+                    <hr className='border-none outline-none h-0.5 bg-[#0D7DFF] w-3/5 m-auto hidden' />
+                </NavLink>
 
-        <NavLink to="/about">
-          <li> ABOUT </li>
-          <hr />
-        </NavLink>
+                <NavLink to="/doctors" className={({ isActive }) => isActive ? 'active' : ''}>
+                    <li className='py-1'> ALL DOCTORS </li>
+                    <hr className='border-none outline-none h-0.5 bg-[#0D7DFF] w-3/5 m-auto hidden' />
+                </NavLink>
 
-        <NavLink to="/contact">
-          <li> CONTACT </li>
-          <hr />
-        </NavLink>
-      </ul>
+                <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>
+                    <li className='py-1'> ABOUT </li>
+                    <hr className='border-none outline-none h-0.5 bg-[#0D7DFF] w-3/5 m-auto hidden' />
+                </NavLink>
 
-      <div>
-        <button> Create Account </button>
-      </div>
-    </div>
-  );
+                <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>
+                    <li className='py-1'> CONTACT </li>
+                    <hr className='border-none outline-none h-0.5 bg-[#0D7DFF] w-3/5 m-auto hidden' />
+                </NavLink>
+            </ul>
+
+            <div className='flex items-center gap-4'>
+                <button onClick={() => navigate('/login')} className='bg-blue-500 text-white px-4 py-2 rounded-full font-light'>
+                    Create Account
+                </button>
+            </div>
+        </div>
+    );
 };
 
 export default Navbar;
+
+
+
+

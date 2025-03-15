@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className='mx-4 sm:mx-[10%]'>
 
-      // ** Making Navigation Bar visible on all pages
+      
       <Navbar/>
 
       <Routes>

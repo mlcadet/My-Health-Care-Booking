@@ -5,11 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary': "#5f6fff"
+      },
+    },
   },
   plugins: [],
 };
-
 
 // /** @type {import('tailwindcss').Config} */
 // export default {
