@@ -1,10 +1,10 @@
-import React from 'react';
-import { doctors } from '../assets/assets_frontend/assets';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 
 const TopDoctors = () => {
-
-const navigate = useNavigate();
+  const navigate = useNavigate();
+  const { doctors } = useContext(AppContext);
 
   return (
     <div className="flex flex-col items-center gap-4 py-16 text-gray-900 md:mx-10">
@@ -19,14 +19,14 @@ const navigate = useNavigate();
         {doctors.slice(0, 10).map((item, index) => (
           <div
             key={index}
-            onClick={()=> navigate(`/appointment/${item._id}`)}
+            onClick={() => navigate(`/appointment/${item._id}`)}
             className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500 bg-white"
           >
             {/* Image with responsive height and no crop */}
             <img
               src={item.image}
               alt={item.name}
-              className="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-contain bg-blue-50"
+              className="w-full h-80 sm:h-96 md:h-112 lg:h-128 object-cover bg-blue-50"
             />
 
             {/* Card content */}
