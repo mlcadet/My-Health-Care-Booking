@@ -22,11 +22,11 @@ const TopDoctors = () => {
             onClick={() => navigate(`/appointment/${item._id}`)}
             className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500 bg-white"
           >
-            {/* Image with responsive height and no crop */}
+            {/* Responsive image with no cropping */}
             <img
               src={item.image}
               alt={item.name}
-              className="w-full h-80 sm:h-96 md:h-112 lg:h-128 object-cover bg-blue-50"
+              className="w-full h-72 sm:h-80 md:h-96 lg:h-[28rem] object-contain bg-blue-50"
             />
 
             {/* Card content */}
@@ -51,3 +51,4 @@ const TopDoctors = () => {
 };
 
 export default TopDoctors;
+
