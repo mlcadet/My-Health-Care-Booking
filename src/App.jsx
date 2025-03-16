@@ -11,6 +11,7 @@ import Appointment from './pages/Appointment';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import SpecialtyMenu from './components/SpecialtyMenu';
+import TopDoctors from './components/TopDoctors';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
               <Header />
               <Home />
               <SpecialtyMenu />
+              <TopDoctors />
             </>
           }
         />
