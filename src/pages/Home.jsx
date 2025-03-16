@@ -5,8 +5,8 @@ import SpecialtyMenu from '../components/SpecialtyMenu';
 const Home = () => {
   return (
     <div>
-      <Header />
-      <SpecialtyMenu/>
+      
+      
     </div>
   );
 };

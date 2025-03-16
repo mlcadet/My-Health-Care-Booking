@@ -5,7 +5,7 @@ import headerImg from '../assets/assets_frontend/header_img.png';
 
 const Header = () => {
   return (
-    <section className="w-full bg-[#0D7DFF] rounded-lg px-6 md:px-10 lg:px-20 py-10 md:py-20">
+    <section className="w-full bg-primary rounded-lg px-6 md:px-10 lg:px-20 py-10 md:py-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         
         {/* Left Side */}
