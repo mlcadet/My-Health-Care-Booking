@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import groupProfiles from '../assets/assets_frontend/group_profiles.png';
 import arrowIcon from '../assets/assets_frontend/arrow_icon.svg';
 import headerImg from '../assets/assets_frontend/header_img.png';
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <section
       style={{ backgroundColor: '#5f6fff' }}
@@ -25,13 +28,17 @@ const Header = () => {
             </p>
           </div>
 
-          <a
-            href="#specialty"
-            className="mt-4 inline-flex items-center hover:underline hover:text-blue-100 transition-all"
+          {/* ✅ Fixed: Navigate to /doctors */}
+          <button
+            onClick={() => {
+              navigate('/doctors');
+              window.scrollTo(0, 0); // Optional: scroll to top
+            }}
+            className="mt-4 inline-flex items-center text-white hover:underline hover:text-blue-100 transition-all"
           >
             Book Appointment
             <img src={arrowIcon} alt="Arrow icon" className="ml-2 w-4 h-4" />
-          </a>
+          </button>
         </div>
 
         {/* Right Side */}
@@ -48,6 +55,8 @@ const Header = () => {
 };
 
 export default Header;
+
+
 
 
 //---DO NOT DELETE THIS CODE---//

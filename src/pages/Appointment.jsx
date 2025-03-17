@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import verifiedIcon from '../assets/assets_frontend/verified_icon.svg';
 import infoIcon from '../assets/assets_frontend/info_icon.svg';
+import RelatedDoctors from '../components/RelatedDoctors';
 
 const Appointment = () => {
   const { docId } = useParams();
@@ -165,6 +166,9 @@ const Appointment = () => {
           Book an appointment
         </button>
       </div>
+
+          {/** List of Related Doctors */}
+          <RelatedDoctors docId={docId} specialty={docInfo.specialty} />
     </div>
   );
 };

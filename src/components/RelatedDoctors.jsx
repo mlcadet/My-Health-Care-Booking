@@ -1,28 +1,39 @@
-import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+import { useNavigate } from 'react-router-dom';
 
-const TopDoctors = () => {
-  const navigate = useNavigate();
+const RelatedDoctors = ({ specialty, docId }) => {
   const { doctors } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  const [relDoc, setRelDoc] = useState([]);
+
+  useEffect(() => {
+    if (doctors.length > 0 && specialty) {
+      const doctorsData = doctors.filter(
+        (doc) => doc.specialty === specialty && doc._id !== docId
+      );
+      setRelDoc(doctorsData);
+    }
+  }, [specialty, docId, doctors]);
 
   return (
     <div className="flex flex-col items-center gap-4 py-16 text-gray-900 md:mx-10">
       {/* Header */}
-      <h1 className="text-3xl font-medium">Top Doctors to Book</h1>
+      <h1 className="text-3xl font-medium">Related Doctors</h1>
       <p className="sm:w-1/3 text-center text-sm">
-        Simply browse through our extensive list of trusted doctors.
+        You might also be interested in these doctors with similar specialties.
       </p>
 
       {/* Grid layout for doctor cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-5 w-full px-3 sm:px-0">
-        {doctors.slice(0, 10).map((item, index) => (
+        {relDoc.slice(0, 5).map((item, index) => (
           <div
             key={index}
             onClick={() => {navigate(`/appointment/${item._id}`); scrollTo(0, 0);}}
             className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-500 bg-white"
           >
-            {/* Responsive image with no cropping */}
+            {/* Doctor Image */}
             <img
               src={item.image}
               alt={item.name}
@@ -42,13 +53,15 @@ const TopDoctors = () => {
         ))}
       </div>
 
-      {/* "More" button */}
-      <button className="bg-blue-50 text-gray-600 px-12 py-3 rounded-full mt-10 hover:bg-blue-100 transition-all">
-        more
-      </button>
+      {/* Optional More button */}
+      {relDoc.length > 5 && (
+        <button className="bg-blue-50 text-gray-600 px-12 py-3 rounded-full mt-10 hover:bg-blue-100 transition-all">
+          More
+        </button>
+      )}
     </div>
   );
 };
 
-export default TopDoctors;
+export default RelatedDoctors;
 
