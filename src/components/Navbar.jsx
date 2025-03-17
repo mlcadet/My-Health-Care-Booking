@@ -3,59 +3,42 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../assets/assets_frontend/logo.svg';
 import profilePic from '../assets/assets_frontend/profile_pic.png';
 import dropdownIcon from '../assets/assets_frontend/dropdown_icon.svg';
+import menuIcon from '../assets/assets_frontend/menu_icon.svg';
+import crossIcon from '../assets/assets_frontend/cross_icon.png';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
   const [token, setToken] = useState(true);
 
   return (
-    <div className="flex justify-between items-center text-base py-4 mb-5 border-b-2 border-b-gray-400 px-4 sm:px-10">
-      <img onClick={()=>navigate} className="w-48 cursor-pointer" src={logo} alt="Logo" />
+    <div className="flex justify-between items-center text-base py-4 mb-5 border-b-2 border-b-gray-400 px-4 sm:px-10 relative">
+      <img
+        onClick={() => navigate('/')}
+        className="w-48 cursor-pointer"
+        src={logo}
+        alt="Logo"
+      />
 
+      {/* Desktop Menu */}
       <ul className="hidden md:flex items-center gap-5 font-medium">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive
-              ? 'text-blue-500 border-b-2 border-blue-500 pb-1'
-              : 'hover:text-blue-500 transition'
-          }
-        >
-          HOME
-        </NavLink>
-        <NavLink
-          to="/doctors"
-          className={({ isActive }) =>
-            isActive
-              ? 'text-blue-500 border-b-2 border-blue-500 pb-1'
-              : 'hover:text-blue-500 transition'
-          }
-        >
-          ALL DOCTORS
-        </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive
-              ? 'text-blue-500 border-b-2 border-blue-500 pb-1'
-              : 'hover:text-blue-500 transition'
-          }
-        >
-          ABOUT
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            isActive
-              ? 'text-blue-500 border-b-2 border-blue-500 pb-1'
-              : 'hover:text-blue-500 transition'
-          }
-        >
-          CONTACT
-        </NavLink>
+        {['/', '/doctors', '/about', '/contact'].map((path, idx) => (
+          <NavLink
+            key={idx}
+            to={path}
+            className={({ isActive }) =>
+              isActive
+                ? 'text-blue-500 border-b-2 border-blue-500 pb-1'
+                : 'hover:text-blue-500 transition'
+            }
+          >
+            {['HOME', 'ALL DOCTORS', 'ABOUT', 'CONTACT'][idx]}
+          </NavLink>
+        ))}
       </ul>
 
+      {/* Profile / Button */}
       <div className="flex items-center gap-4">
         {token ? (
           <div className="flex items-center gap-2 cursor-pointer relative">
@@ -66,7 +49,6 @@ const Navbar = () => {
               alt="Dropdown Icon"
               onClick={() => setShowMenu(!showMenu)}
             />
-
             {showMenu && (
               <div className="absolute top-12 right-0 text-base font-medium text-gray-600 z-20">
                 <div className="min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4">
@@ -85,12 +67,51 @@ const Navbar = () => {
             Create Account
           </button>
         )}
+
+        {/* Mobile Menu Icon */}
+        <img
+          onClick={() => setMobileMenu(true)}
+          className="w-6 md:hidden"
+          src={menuIcon}
+          alt="Menu Icon"
+        />
       </div>
+
+      {/* Mobile Menu Slide-in */}
+      {mobileMenu && (
+        <div className="absolute top-0 left-0 w-full h-screen bg-white z-50 px-6 py-4 flex flex-col gap-6">
+          <div className="flex justify-between items-center">
+            <img src={logo} alt="Logo" className="w-32" />
+            <img
+              onClick={() => setMobileMenu(false)}
+              src={crossIcon}
+              alt="Close"
+              className="w-6 cursor-pointer"
+            />
+          </div>
+
+          <ul className="flex flex-col items-center gap-4 font-medium text-lg">
+            <NavLink to="/" onClick={() => setMobileMenu(false)}> <p className="px-4 py-2 rounded inline-block">Home</p> </NavLink>
+            <NavLink to="/doctors" onClick={() => setMobileMenu(false)}> <p className="px-4 py-2 rounded inline-block">All Doctors</p> </NavLink>
+            <NavLink to="/about" onClick={() => setMobileMenu(false)}> <p className="px-4 py-2 rounded inline-block">About</p> </NavLink>
+            <NavLink to="/contact" onClick={() => setMobileMenu(false)}> <p className="px-4 py-2 rounded inline-block">Contact</p> </NavLink>
+            {!token && (
+              <button
+                onClick={() => { navigate('/login'); setMobileMenu(false); }}
+                className="bg-blue-500 text-white px-4 py-2 rounded-full mt-2"
+              >
+                Create Account
+              </button>
+            )}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Navbar;
+
 
 
 
