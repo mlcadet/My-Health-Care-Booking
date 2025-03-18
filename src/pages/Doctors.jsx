@@ -39,6 +39,7 @@ const Doctors = () => {
           <ul className="flex flex-col gap-2">
             {specialties.map((item, index) => (
               <li key={index}>
+                
                 <button
                   onClick={() => navigate(`/doctors/${item}`)}
                   className={`w-full text-left px-4 py-2 rounded-md ${
