@@ -87,13 +87,13 @@ export const specialtyData = [
 export const doctors = [
     {
         _id: 'doc1',
-        name: 'Dr. Richard James',
+        name: 'Dr. Marjoree Moore',
         image: doc1,
         specialty: 'General physician',
         degree: 'MBBS',
-        experience: '4 Years',
+        experience: '7 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        fees: 200,
         address: {
             line1: '17th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -105,9 +105,9 @@ export const doctors = [
         image: doc2,
         specialty: 'Gynecologist',
         degree: 'MBBS',
-        experience: '3 Years',
+        experience: '4 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 60,
+        fees: 200,
         address: {
             line1: '27th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -115,13 +115,13 @@ export const doctors = [
     },
     {
         _id: 'doc3',
-        name: 'Dr. Sarah Patel',
+        name: 'Dr. Sarah August',
         image: doc3,
         specialty: 'Dermatologist',
         degree: 'MBBS',
-        experience: '1 Year',
+        experience: '5 Year',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 30,
+        fees: 200,
         address: {
             line1: '37th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -133,9 +133,9 @@ export const doctors = [
         image: doc4,
         specialty: 'Pediatricians',
         degree: 'MBBS',
-        experience: '2 Years',
+        experience: '5 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 40,
+        fees: 140,
         address: {
             line1: '47th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -143,13 +143,13 @@ export const doctors = [
     },
     {
         _id: 'doc5',
-        name: 'Dr. Jennifer Garcia',
+        name: 'Dr. John Garcia',
         image: doc5,
         specialty: 'Neurologist',
         degree: 'MBBS',
         experience: '4 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        fees: 150,
         address: {
             line1: '57th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -163,7 +163,7 @@ export const doctors = [
         degree: 'MBBS',
         experience: '4 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        fees: 150,
         address: {
             line1: '57th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -177,7 +177,7 @@ export const doctors = [
         degree: 'MBBS',
         experience: '4 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        fees: 150,
         address: {
             line1: '17th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -189,9 +189,9 @@ export const doctors = [
         image: doc8,
         specialty: 'Gynecologist',
         degree: 'MBBS',
-        experience: '3 Years',
+        experience: '4 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 60,
+        fees: 160,
         address: {
             line1: '27th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -203,9 +203,9 @@ export const doctors = [
         image: doc9,
         specialty: 'Dermatologist',
         degree: 'MBBS',
-        experience: '1 Year',
+        experience: '7 Year',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 30,
+        fees: 130,
         address: {
             line1: '37th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -217,9 +217,9 @@ export const doctors = [
         image: doc10,
         specialty: 'Pediatricians',
         degree: 'MBBS',
-        experience: '2 Years',
+        experience: '4 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 40,
+        fees: 140,
         address: {
             line1: '47th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -231,9 +231,9 @@ export const doctors = [
         image: doc11,
         specialty: 'Neurologist',
         degree: 'MBBS',
-        experience: '4 Years',
+        experience: '5 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        fees: 150,
         address: {
             line1: '57th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -245,9 +245,9 @@ export const doctors = [
         image: doc12,
         specialty: 'Neurologist',
         degree: 'MBBS',
-        experience: '4 Years',
+        experience: '6 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        fees: 150,
         address: {
             line1: '57th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -261,7 +261,7 @@ export const doctors = [
         degree: 'MBBS',
         experience: '4 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        fees: 150,
         address: {
             line1: '17th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -273,9 +273,9 @@ export const doctors = [
         image: doc14,
         specialty: 'Gynecologist',
         degree: 'MBBS',
-        experience: '3 Years',
+        experience: '6 Years',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 60,
+        fees: 160,
         address: {
             line1: '27th Cross, Richmond',
             line2: 'Seattle, WA'
@@ -287,15 +287,34 @@ export const doctors = [
         image: doc15,
         specialty: 'Dermatologist',
         degree: 'MBBS',
-        experience: '1 Year',
+        experience: '5 Year',
         about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 30,
+        fees: 150,
         address: {
             line1: '37th Cross, Richmond',
             line2: 'Seattle, WA'
         }
     },
 ];
+
+export const doctorImages = {
+    'doc1.png': doc1,
+    'doc2.png': doc2,
+    'doc3.png': doc3,
+    'doc4.png': doc4,
+    'doc5.png': doc5,
+    'doc6.png': doc6,
+    'doc7.png': doc7,
+    'doc8.png': doc8,
+    'doc9.png': doc9,
+    'doc10.png': doc10,
+    'doc11.png': doc11,
+    'doc12.png': doc12,
+    'doc13.png': doc13,
+    'doc14.png': doc14,
+    'doc15.png': doc15,
+  };
+  
 
 
 // import appointment_img from './appointment_img.png'

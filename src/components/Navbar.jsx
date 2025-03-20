@@ -81,7 +81,7 @@ const Navbar = () => {
       {mobileMenu && (
         <div className="absolute top-0 left-0 w-full h-screen bg-white z-50 px-6 py-4 flex flex-col gap-6">
           <div className="flex justify-between items-center">
-            <img src={logo} alt="Logo" className="w-32" />
+            <img src={logo3} alt="Logo" className="w-32" />
             <img
               onClick={() => setMobileMenu(false)}
               src={crossIcon}

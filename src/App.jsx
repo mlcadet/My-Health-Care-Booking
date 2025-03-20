@@ -1,16 +1,20 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+// Page components
 import Home from './pages/Home';
 import Doctors from './pages/Doctors';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Login from './pages/login';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import MyProfile from './pages/MyProfile';
 import MyAppointments from './pages/MyAppointments';
 import Appointment from './pages/Appointment';
+
+// Layout components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
 
 const App = () => {
   return (
@@ -20,7 +24,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/doctors/:specialty" element={<Doctors />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />       
+        <Route path="/signup" element={<Signup />} />     
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/my-profile" element={<MyProfile />} />
@@ -33,6 +38,10 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
 
 
 // import React from 'react';
